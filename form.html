@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Form Data</title>
+</head>
+
+<body>
+<form action="insert.php" method="post" name="don">
+<table>
+<tr>
+<td>First Name:</td>
+<td><input name="fName" type="text" id="fn" placeholder="First Name" size="20" maxlength="20" /></td>
+</tr>
+<tr>
+<td>Last Name:</td>
+<td><input name="lName" type="text" id="ln" placeholder="Lasst Name" size="20" maxlength="20" /></td>
+</tr>
+<tr>
+<td>City:</td>
+<td><input name="city" type="text" id="place" placeholder="City" size="20" maxlength="20" /></td>
+</tr>
+<tr>
+<td>Sex:</td>
+<td><input name="sex" type="text" id="gender" placeholder="Gender" size="20" maxlength="7" /></td>
+</tr>
+<tr>
+<td></td>
+<td><input name="submit" type="submit" value="Go!" onclick="myFunction();"/></td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+function myFunction(){
+	var xmlhttp;
+	xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET","insert.php?fName="+document.getElementById('fn').value+"&lName="+document.getElementById('ln').value+"&city="+document.getElementById('place').value+"&sex="+document.getElementById('gender').value,false);
+	xmlhttp.send(null);
+	}
+</script>
+</body>
+</html>

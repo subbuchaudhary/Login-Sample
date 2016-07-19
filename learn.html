@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>learn</title>
+<script type="text/javascript" src="countries.js"></script>
+</head>
+
+<body>
+<div>
+<form action="learnphp.php" method="post" name="don" >
+<table>
+<tr>
+<td>*First Name:</td>
+<td><input type="text" name="fName" placeholder="First Name" id="fn" required="required" min="3" max="18"/></td>
+</tr>
+<tr>
+<td>Middle Name:</td>
+<td><input type="text" name="mName" placeholder="Middle Name" id="mn" /></td>
+</tr>
+<tr>
+<td>*Last Name:</td>
+<td><input type="text" name="lName" placeholder="Last Name" id="ln" required="required" min="1" max="18"  /></td>
+</tr>
+<tr>
+<td>*Email:</td>
+<td><input type="email" name="email" placeholder="email address" id="email" required="required" /></td>
+</tr>
+<tr>
+<td>*Password:</td>
+<td><input type="password" name="password" placeholder="password" required="required" min="6" max="18" id="pass" /></td>
+</tr>
+<tr>
+<td>Date of Birth:</td>
+<td><input type="date" name="birth" placeholder="DOB" /></td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td><input type="radio" name="gender" value="Female" />Female
+<input type="radio" name="gender" value="male" />Male</td>
+</tr>
+<tr>
+<td>Country:</td>
+<td><select id="country" name ="country"></select></td>
+<tr>
+<td>State:</td>
+<td> <select name ="state" id ="state"></select>
+ <script language="javascript">
+populateCountries("country", "state");
+ </script></td>
+ </tr>
+</tr>
+<tr>
+<td></td>
+<td> <input type="checkbox" name="terms" required="required" />By clicking here,<br /> please accept our terms & conditions</td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Submit" onclick="myFunction()" /></td>
+</tr>
+</table>
+</form>
+</div>
+<script type="text/javascript">
+function myFunction(){
+	var xmlhttp;
+	xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", "learnphp.php?fName="+document.getElementById('fn').value+"&lName="+document.getElementById('ln').value+"&email="+document.getElementById('email').value+"&password="+document.getElementById('pass').value, false);
+	xmlhttp.send(null);
+	}
+</script>
+</body>
+</html>
